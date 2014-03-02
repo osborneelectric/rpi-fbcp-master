@@ -1,4 +1,3 @@
-
 #include <stdio.h>
 #include <syslog.h>
 #include <fcntl.h>
@@ -37,7 +36,7 @@ int process() {
     syslog(LOG_INFO, "Primary display is %d x %d", display_info.width, display_info.height);
 
 
-    fbfd = open("/dev/fb1", O_RDWR);
+    fbfd = open("/dev/fb0", O_RDWR);
     if (!fbfd) {
         syslog(LOG_ERR, "Unable to open secondary display");
         return -1;
